@@ -5,7 +5,7 @@ import gleam/result
 import gleam/string
 import utils/read_file
 
-pub fn day1() {
+pub fn run() {
   let data = read_file.load_and_split_data_or_panic("./files/day1.txt")
   let one_list = format_join_list(data)
   let two_lists = format_data(data)

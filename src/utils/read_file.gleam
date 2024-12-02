@@ -25,7 +25,8 @@ pub fn load_and_split_data(
 ) -> Result(List(String), ConfigError) {
   case open_file(filename) {
     Ok(data) -> {
-      Ok(string.split(data, on: "\n"))
+      let transformed = data |> string.trim |> string.split(on: "\n")
+      Ok(transformed)
     }
     Error(_) -> Error(ConfigError(message: "Failed to read config file"))
   }
