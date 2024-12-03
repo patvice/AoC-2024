@@ -6,7 +6,6 @@ import gleam/string
 import utils/read_file
 
 pub fn run() {
-  io.debug("Hello, Gleam!")
   let data = read_file.load_data_or_panic("./files/day3.txt")
   let values = parse(data)
   let result = part1(values)
